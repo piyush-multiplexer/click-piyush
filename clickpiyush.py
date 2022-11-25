@@ -13,8 +13,9 @@ def bio(desc):
 
 
 @click.command()
-def greet():
-    click.echo("Hello! I'm Piyush.")
+@click.argument('name')
+def greet(name):
+    click.echo(f"Hello {name}! I'm Piyush.")
 
 
 cli.add_command(greet)
