@@ -28,11 +28,24 @@ def age():
     click.echo("I'm 2X years older, shouldn't be matter.")
 
 
+@click.command()
+def blog():
+    """Get My blog URL"""
+    blog_url = "https://blog.thesourcepedia.org/"
+    click.echo(f"{blog_url}   Wanna visit [y/n]: ", nl=False)
+    c = click.getchar()
+    click.echo(c)
+    if c == 'y':
+        click.echo("Launching Piyush's Blog")
+        click.launch(blog_url)
+
+
 # @click.command()
 # @click.Choice()
 cli.add_command(greet)
 cli.add_command(bio)
 cli.add_command(age)
+cli.add_command(blog)
 
 if __name__ == '__main__':
     cli()
