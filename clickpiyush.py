@@ -16,11 +16,13 @@ def greet(name):
 
 
 @click.command()
-@click.option('--desc', default=0, help='Detailed Info.')
+@click.option('--desc', default=False, show_default=True, help='Show detailed Info.')
 def bio(desc):
     """Basic Bio"""
-    click.echo(f'decc {desc}')
-    click.echo("This is me, and describing self.")
+    if desc:
+        click.echo("Hey, this is piyush here, thanks for your interest.\nTo know more about me please run this CLI and different commands.\nThank You!")
+    else:
+        click.echo("This is me, and describing self.")
 
 
 @click.command()
