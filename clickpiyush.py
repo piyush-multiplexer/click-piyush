@@ -43,12 +43,19 @@ def blog():
         click.launch(blog_url)
 
 
+@click.command()
+def portfolio():
+    """Launch my Portfolio!"""
+    click.launch("https://piyushgoyani.thesourcepedia.org/")
+
+
 # @click.command()
 # @click.Choice()
 cli.add_command(greet)
 cli.add_command(bio)
 cli.add_command(age)
 cli.add_command(blog)
+cli.add_command(portfolio)
 
 if __name__ == '__main__':
     cli()
