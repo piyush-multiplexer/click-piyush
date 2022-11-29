@@ -1,4 +1,5 @@
 import click
+import time
 
 
 @click.group()
@@ -32,6 +33,18 @@ def age():
 
 
 @click.command()
+def skills():
+    """Get my dummy skills set with progress bar"""
+    skill_set = ["JavaScript", "Python", "GraphQL", "C", "TypeScript", "VueJS",
+                 "NuxtJS", "Socket Programming", "Machine Learning", "NodeJS", "Linux"]
+
+    with click.progressbar(skill_set, label='Getting skills', length=len(skill_set)-1, show_eta=False, color='blue') as skill_list:
+        for skill in skill_list:
+            click.echo(f" {skill}")
+            time.sleep(0.3)
+
+
+@click.command()
 def blog():
     """Get My blog URL"""
     blog_url = "https://blog.thesourcepedia.org/"
@@ -54,6 +67,7 @@ def portfolio():
 cli.add_command(greet)
 cli.add_command(bio)
 cli.add_command(age)
+cli.add_command(skills)
 cli.add_command(blog)
 cli.add_command(portfolio)
 
