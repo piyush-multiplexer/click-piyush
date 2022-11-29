@@ -10,7 +10,7 @@ def cli():
 @click.command()
 @click.option('--name', prompt='Identify youself by name')
 def greet(name):
-    """What is this tool"""
+    """Describe this tool with colors to You."""
     click.secho(f"Hello {name}", bold=True, bg='green', fg='black')
     click.secho(
         "This is Command Line Interface which gives information of maker named Piyush.", bg='blue', fg='white')
