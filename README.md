@@ -4,3 +4,8 @@
 
 - It gives basic information of me(Piyush) based on used input, command and options, just to demonstrate CLI Apps.
 - Made with Click.
+
+### Installation
+```
+pip install clickpiyush
+```
